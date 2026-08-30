@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Magness & Sons General Contracting, Inc. — Folsom, PA</title>
+<meta name="description" content="Commercial construction, renovation, and remodeling in Folsom, PA and the Delaware Valley since 1996.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%2316232E'/%3E%3Cpolyline points='7,31 7,11 20,25 33,11 33,31' fill='none' stroke='%23F5B700' stroke-width='3' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --navy: #16232E;
+    --navy-2: #1E2F3C;
+    --steel: #3D5A73;
+    --steel-light: #7C99AC;
+    --concrete: #E9EDEC;
+    --paper: #FAFAF8;
+    --charcoal: #22262B;
+    --yellow: #F5B700;
+    --yellow-dim: #C99400;
+    --line: rgba(22,35,46,0.16);
+    --line-on-dark: rgba(255,255,255,0.22);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--concrete);
+    color:var(--charcoal);
+    font-family:'Work Sans', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+  }
+
+  h1,h2,h3,.display{
+    font-family:'Oswald', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.02em;
+    margin:0;
+    color:var(--navy);
+    font-weight:600;
+  }
+
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing:0.04em;
+  }
+
+  a{color:inherit;}
+  img,svg{display:block; max-width:100%;}
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ---------- Focus states ---------- */
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:3px solid var(--yellow);
+    outline-offset:3px;
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:var(--navy);
+    border-bottom:1px solid var(--line-on-dark);
+  }
+  .header-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 28px;
+    max-width:1180px;
+    margin:0 auto;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:var(--paper);
+    text-decoration:none;
+  }
+  .logo-mark{
+    width:36px;
+    height:36px;
+    flex-shrink:0;
+  }
+  .brand-text{
+    display:flex;
+    flex-direction:column;
+    line-height:1.1;
+  }
+  .brand-mark{
+    font-family:'Oswald',sans-serif;
+    font-weight:700;
+    font-size:1.25rem;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    color:var(--paper);
+  }
+  .brand-mark span{color:var(--yellow);}
+  .brand-sub{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.65rem;
+    color:var(--steel-light);
+    letter-spacing:0.12em;
+    display:none;
+  }
+  @media(min-width:640px){ .brand-sub{display:inline;} }
+
+  nav{display:none; gap:28px; align-items:center;}
+  @media(min-width:860px){ nav{display:flex;} }
+  nav a{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.78rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--steel-light);
+    text-decoration:none;
+    padding:6px 0;
+    border-bottom:2px solid transparent;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  nav a:hover{color:var(--paper); border-color:var(--yellow);}
+
+  .call-btn{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.8rem;
+    color:var(--navy);
+    background:var(--yellow);
+    text-decoration:none;
+    padding:10px 16px;
+    border-radius:2px;
+    font-weight:600;
+    letter-spacing:0.03em;
+    white-space:nowrap;
+    transition:background .15s ease;
+  }
+  .call-btn:hover{background:#ffcb3d;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:
+      linear-gradient(180deg, rgba(22,35,46,0.94), rgba(22,35,46,0.98)),
+      repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(124,153,172,0.14) 39px, rgba(124,153,172,0.14) 40px),
+      repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(124,153,172,0.14) 39px, rgba(124,153,172,0.14) 40px),
+      var(--navy);
+    color:var(--paper);
+    padding:72px 0 0 0;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-inner{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:48px;
+    align-items:center;
+    padding-bottom:40px;
+  }
+  @media(min-width:920px){
+    .hero-inner{grid-template-columns:1.05fr 0.95fr; gap:24px;}
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.78rem;
+    color:var(--yellow);
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    margin-bottom:18px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:26px; height:1px;
+    background:var(--yellow);
+    display:inline-block;
+  }
+  .hero h1{
+    color:var(--paper);
+    font-size:clamp(2.4rem, 6vw, 4.1rem);
+    line-height:1.02;
+    max-width:12ch;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--yellow);
+  }
+  .hero p.lede{
+    font-family:'Work Sans',sans-serif;
+    color:var(--steel-light);
+    font-size:1.08rem;
+    max-width:46ch;
+    margin-top:22px;
+  }
+  .hero-ctas{
+    margin-top:32px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .btn-primary{
+    background:var(--yellow);
+    color:var(--navy);
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:600;
+    font-size:0.85rem;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    text-decoration:none;
+    padding:15px 26px;
+    border-radius:2px;
+    transition:background .15s ease, transform .15s ease;
+  }
+  .btn-primary:hover{background:#ffcb3d; transform:translateY(-1px);}
+  .btn-ghost{
+    border:1px solid var(--line-on-dark);
+    color:var(--paper);
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:500;
+    font-size:0.85rem;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    text-decoration:none;
+    padding:15px 26px;
+    border-radius:2px;
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .btn-ghost:hover{border-color:var(--yellow); background:rgba(245,183,0,0.06);}
+
+  /* Blueprint elevation illustration */
+  .elevation{
+    position:relative;
+  }
+  .elevation svg{width:100%; height:auto;}
+
+  /* ---------- Dimension divider ---------- */
+  .dim-divider{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:20px 0;
+  }
+  .dim-divider .tick{
+    width:1px; height:14px; background:var(--line);
+    flex-shrink:0;
+  }
+  .dim-divider .rule{
+    flex:1; height:1px; background:var(--line);
+  }
+  .dim-divider .label{
+    font-size:0.72rem;
+    color:var(--steel);
+    white-space:nowrap;
+  }
+  .dim-divider.on-dark .rule, .dim-divider.on-dark .tick{background:var(--line-on-dark);}
+  .dim-divider.on-dark .label{color:var(--steel-light);}
+
+  /* ---------- Stats ---------- */
+  .stats-section{
+    background:var(--paper);
+    padding:70px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .stats-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  @media(min-width:760px){ .stats-grid{grid-template-columns:repeat(4,1fr);} }
+  .stat{
+    background:var(--paper);
+    padding:30px 24px;
+  }
+  .stat .num{
+    font-family:'Oswald',sans-serif;
+    font-size:2.6rem;
+    color:var(--navy);
+    font-weight:600;
+    line-height:1;
+  }
+  .stat .num span{color:var(--yellow-dim);}
+  .stat .cap{
+    margin-top:10px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--steel);
+  }
+
+  /* ---------- Section heading pattern ---------- */
+  .section{padding:88px 0;}
+  .section-head{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    margin-bottom:52px;
+    max-width:640px;
+  }
+  .section-num{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.78rem;
+    color:var(--yellow-dim);
+    letter-spacing:0.1em;
+  }
+  .section h2{
+    font-size:clamp(1.9rem,4vw,2.6rem);
+  }
+  .section-desc{
+    color:var(--steel);
+    font-size:1.02rem;
+    max-width:56ch;
+  }
+
+  /* ---------- Services ---------- */
+  .services{background:var(--concrete);}
+  .service-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  @media(min-width:760px){ .service-grid{grid-template-columns:repeat(3,1fr);} }
+  .service-card{
+    background:var(--paper);
+    padding:36px 30px;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  .service-icon{
+    width:44px; height:44px;
+  }
+  .service-card h3{
+    font-size:1.15rem;
+  }
+  .service-card p{
+    color:var(--steel);
+    font-size:0.95rem;
+    margin:0;
+  }
+  .service-tag{
+    margin-top:auto;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.68rem;
+    color:var(--yellow-dim);
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+  }
+
+  /* ---------- Process ---------- */
+  .process{background:var(--navy); color:var(--paper);}
+  .process .section-desc{color:var(--steel-light);}
+  .process h2{color:var(--paper);}
+  .process-list{
+    display:flex;
+    flex-direction:column;
+  }
+  .process-item{
+    display:grid;
+    grid-template-columns:64px 1fr;
+    gap:24px;
+    padding:26px 0;
+    border-top:1px solid var(--line-on-dark);
+  }
+  .process-item:last-child{border-bottom:1px solid var(--line-on-dark);}
+  .process-item .step-num{
+    font-family:'Oswald',sans-serif;
+    font-size:1.6rem;
+    color:var(--yellow);
+    font-weight:600;
+  }
+  .process-item h3{
+    color:var(--paper);
+    font-size:1.1rem;
+    margin-bottom:8px;
+  }
+  .process-item p{
+    color:var(--steel-light);
+    margin:0;
+    max-width:60ch;
+    font-size:0.96rem;
+  }
+
+  /* ---------- Project log ---------- */
+  .projects{background:var(--paper);}
+  .project-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+  @media(min-width:760px){ .project-grid{grid-template-columns:repeat(3,1fr);} }
+  .project-card{
+    border:1px solid var(--line);
+    background:var(--concrete);
+  }
+  .project-figure{
+    aspect-ratio:4/3;
+    background:var(--navy);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:18px;
+  }
+  .project-body{padding:20px 22px 24px;}
+  .project-body .ptag{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.68rem;
+    color:var(--yellow-dim);
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+  }
+  .project-body h3{
+    font-size:1.05rem;
+    margin-top:8px;
+  }
+  .project-body p{
+    color:var(--steel);
+    font-size:0.9rem;
+    margin:8px 0 0;
+  }
+
+  /* ---------- About ---------- */
+  .about{background:var(--concrete);}
+  .about-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:48px;
+  }
+  @media(min-width:900px){ .about-grid{grid-template-columns:1fr 1fr;} }
+  .about-copy p{color:var(--steel); font-size:1.02rem;}
+  .about-copy p+p{margin-top:16px;}
+  .signature-block{
+    border:1px solid var(--line);
+    background:var(--paper);
+    padding:28px;
+  }
+  .signature-block .mono{font-size:0.72rem; color:var(--yellow-dim); text-transform:uppercase; letter-spacing:0.08em;}
+  .signature-block h3{margin-top:10px; font-size:1.2rem;}
+  .signature-block p{color:var(--steel); font-size:0.95rem; margin-top:10px;}
+  .signature-block ul{
+    list-style:none; padding:0; margin:18px 0 0;
+    display:flex; flex-direction:column; gap:10px;
+  }
+  .signature-block li{
+    display:flex; justify-content:space-between; gap:12px;
+    font-family:'IBM Plex Mono',monospace; font-size:0.82rem;
+    border-top:1px dashed var(--line);
+    padding-top:10px;
+  }
+  .signature-block li span:first-child{color:var(--steel);}
+  .signature-block li span:last-child{color:var(--navy); font-weight:600;}
+
+  /* ---------- Contact ---------- */
+  .contact{background:var(--navy); color:var(--paper);}
+  .contact h2{color:var(--paper);}
+  .contact .section-desc{color:var(--steel-light);}
+  .contact-single{
+    max-width:640px;
+  }
+  .contact-info dl{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:14px 18px;
+    margin:0;
+  }
+  .contact-info dt{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.72rem;
+    color:var(--steel-light);
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    padding-top:2px;
+  }
+  .contact-info dd{
+    margin:0;
+    font-size:1rem;
+  }
+  .contact-info dd a{text-decoration:none; color:var(--yellow); border-bottom:1px solid transparent;}
+  .contact-info dd a:hover{border-color:var(--yellow);}
+  .license-note{
+    margin-top:28px;
+    padding:16px 18px;
+    border:1px solid var(--line-on-dark);
+    font-size:0.85rem;
+    color:var(--steel-light);
+    background:rgba(255,255,255,0.03);
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--navy-2);
+    color:var(--steel-light);
+    padding:32px 0;
+    border-top:1px solid var(--line-on-dark);
+  }
+  .footer-inner{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    font-size:0.82rem;
+  }
+  @media(min-width:700px){
+    .footer-inner{flex-direction:row; justify-content:space-between; align-items:center;}
+  }
+  footer .mono{font-size:0.75rem;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#top" class="brand" aria-label="Magness &amp; Sons General Contracting, home">
+      <svg class="logo-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="0.5" y="0.5" width="39" height="39" fill="none" stroke="#3D5A73" stroke-width="1"/>
+        <polyline points="7,31 7,11 20,25 33,11 33,31" fill="none" stroke="#F5B700" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"/>
+        <line x1="4" y1="34.5" x2="36" y2="34.5" stroke="#7C99AC" stroke-width="1"/>
+        <line x1="4" y1="32.5" x2="4" y2="36.5" stroke="#7C99AC" stroke-width="1"/>
+        <line x1="36" y1="32.5" x2="36" y2="36.5" stroke="#7C99AC" stroke-width="1"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-mark">MAGNESS <span>&amp;</span> SONS</span>
+        <span class="brand-sub mono">GENERAL CONTRACTING, INC.</span>
+      </span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#projects">Project Log</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="call-btn" href="tel:16105342400">(610) 534-2400</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <p class="eyebrow">Folsom, PA · Est. 1996</p>
+        <h1>Built to spec.<br>Standing <em>since &rsquo;96.</em></h1>
+        <p class="lede">Magness &amp; Sons is a Delaware County general contractor building and rebuilding commercial, office, and residential work — from ground-up construction to the renovation nobody else wanted to take on.</p>
+        <div class="hero-ctas">
+          <a class="btn-primary" href="#contact">Request a quote</a>
+          <a class="btn-ghost" href="tel:16105342400">Call (610) 534-2400</a>
+        </div>
+      </div>
+
+      <div class="elevation" aria-hidden="true">
+        <svg viewBox="0 0 520 480" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="arrowL" markerWidth="8" markerHeight="8" refX="1" refY="4" orient="auto">
+              <path d="M8,0 L0,4 L8,8" fill="none" stroke="#F5B700" stroke-width="1"/>
+            </marker>
+            <marker id="arrowR" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+              <path d="M0,0 L8,4 L0,8" fill="none" stroke="#F5B700" stroke-width="1"/>
+            </marker>
+          </defs>
+
+          <!-- building elevation -->
+          <g stroke="#7C99AC" stroke-width="1.4" fill="none">
+            <rect x="90" y="150" width="300" height="230"/>
+            <line x1="90" y1="200" x2="390" y2="200"/>
+            <rect x="115" y="220" width="50" height="70"/>
+            <rect x="185" y="220" width="50" height="70"/>
+            <rect x="255" y="220" width="50" height="70"/>
+            <rect x="325" y="220" width="45" height="70"/>
+            <rect x="115" y="310" width="50" height="70"/>
+            <rect x="185" y="310" width="50" height="70"/>
+            <rect x="255" y="310" width="50" height="70"/>
+            <rect x="160" y="330" width="60" height="50"/>
+            <polyline points="80,150 240,90 400,150"/>
+          </g>
+
+          <!-- dimension: width -->
+          <line x1="90" y1="410" x2="390" y2="410" stroke="#F5B700" stroke-width="1" marker-start="url(#arrowL)" marker-end="url(#arrowR)"/>
+          <line x1="90" y1="382" x2="90" y2="416" stroke="#F5B700" stroke-width="1"/>
+          <line x1="390" y1="382" x2="390" y2="416" stroke="#F5B700" stroke-width="1"/>
+          <text x="240" y="435" fill="#F5B700" font-family="IBM Plex Mono, monospace" font-size="12" text-anchor="middle">EST. 1996 — 30 YRS IN TRADE</text>
+
+          <!-- dimension: height -->
+          <line x1="430" y1="90" x2="430" y2="380" stroke="#7C99AC" stroke-width="1" marker-start="url(#arrowL)" marker-end="url(#arrowR)" transform="rotate(90 430 235)"/>
+          <g transform="translate(430,0)">
+            <line x1="0" y1="90" x2="55" y2="90" stroke="#7C99AC" stroke-width="1"/>
+            <line x1="0" y1="380" x2="55" y2="380" stroke="#7C99AC" stroke-width="1"/>
+            <line x1="45" y1="90" x2="45" y2="380" stroke="#7C99AC" stroke-width="1"/>
+            <text x="60" y="238" fill="#7C99AC" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="start" transform="rotate(90 60 238)">FOLSOM, PA · DELAWARE CO.</text>
+          </g>
+
+          <!-- callout labels -->
+          <text x="30" y="30" fill="#7C99AC" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="1">ELEVATION — NOT TO SCALE</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-section">
+    <div class="wrap">
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="num"><span>~</span>30</div>
+          <div class="cap">Years in business</div>
+        </div>
+        <div class="stat">
+          <div class="num">~25</div>
+          <div class="cap">Tradespeople on staff</div>
+        </div>
+        <div class="stat">
+          <div class="num">1996</div>
+          <div class="cap">Founded &amp; incorporated in PA</div>
+        </div>
+        <div class="stat">
+          <div class="num">1</div>
+          <div class="cap">Shop, 105 Edgewood Ave</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section services" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num mono">SEC. 02 — SERVICES</span>
+        <h2>Three trades. One crew.</h2>
+        <p class="section-desc">We don't sub out the work that matters. Commercial buildouts, renovations, and remodels are handled by the same in-house team from walkthrough to punch list.</p>
+      </div>
+
+      <div class="service-grid">
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 44 44" fill="none" stroke="#16232E" stroke-width="1.6">
+            <rect x="6" y="14" width="32" height="24"/>
+            <line x1="6" y1="22" x2="38" y2="22"/>
+            <line x1="16" y1="22" x2="16" y2="38"/>
+            <line x1="28" y1="22" x2="28" y2="38"/>
+            <polyline points="4,14 22,4 40,14"/>
+          </svg>
+          <h3>Commercial &amp; Office</h3>
+          <p>Ground-up and buildout work for offices, retail floors, and commercial space across Delaware County and the Philadelphia metro.</p>
+          <span class="service-tag">New construction · Buildouts</span>
+        </div>
+
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 44 44" fill="none" stroke="#16232E" stroke-width="1.6">
+            <rect x="8" y="8" width="28" height="28"/>
+            <path d="M14 30 L22 16 L30 30" />
+            <line x1="8" y1="22" x2="36" y2="22" stroke-dasharray="2 3"/>
+          </svg>
+          <h3>Renovation &amp; Repair</h3>
+          <p>Structural repair, roofing, and rooftop installation work — including specialty jobs like wireless and communications infrastructure.</p>
+          <span class="service-tag">Structural · Rooftop · Repair</span>
+        </div>
+
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 44 44" fill="none" stroke="#16232E" stroke-width="1.6">
+            <path d="M8 36 L8 20 L22 8 L36 20 L36 36 Z"/>
+            <line x1="16" y1="36" x2="16" y2="26" />
+            <line x1="16" y1="26" x2="28" y2="26"/>
+            <line x1="28" y1="26" x2="28" y2="36"/>
+          </svg>
+          <h3>General Remodeling</h3>
+          <p>Single-family home remodels — kitchens, additions, and whole-house work planned and built the same way we approach commercial jobs.</p>
+          <span class="service-tag">Additions · Kitchens · Interiors</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section process" id="process">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num mono">SEC. 03 — PROCESS</span>
+        <h2>How a job runs</h2>
+        <p class="section-desc">The same four stages, whether it's a rooftop install or a kitchen remodel.</p>
+      </div>
+
+      <div class="process-list">
+        <div class="process-item">
+          <div class="step-num">01</div>
+          <div>
+            <h3>Walkthrough &amp; scope</h3>
+            <p>We look at the site in person, talk through what you need, and put the scope of work in writing before anything is priced.</p>
+          </div>
+        </div>
+        <div class="process-item">
+          <div class="step-num">02</div>
+          <div>
+            <h3>Estimate &amp; permits</h3>
+            <p>You get a itemized estimate. If the job needs permits or plan review, we file and track them — that's on us, not you.</p>
+          </div>
+        </div>
+        <div class="process-item">
+          <div class="step-num">03</div>
+          <div>
+            <h3>Build</h3>
+            <p>Our crew works the schedule we agreed on. You get a single point of contact for the life of the job, not a rotating cast.</p>
+          </div>
+        </div>
+        <div class="process-item">
+          <div class="step-num">04</div>
+          <div>
+            <h3>Walkthrough &amp; close-out</h3>
+            <p>Final walkthrough, punch list cleared, and documentation handed over — inspections, warranties, and as-builts included.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT LOG -->
+  <section class="section projects" id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num mono">SEC. 04 — PROJECT LOG</span>
+        <h2>Recent work, by type</h2>
+        <p class="section-desc">A sample of the kind of jobs that come through the shop — logged the way we track them internally, by permit and project type.</p>
+      </div>
+
+      <div class="project-grid">
+        <div class="project-card">
+          <div class="project-figure">
+            <svg width="120" height="90" viewBox="0 0 120 90" fill="none" stroke="#F5B700" stroke-width="1.4">
+              <rect x="20" y="55" width="80" height="10"/>
+              <rect x="35" y="20" width="8" height="35"/>
+              <line x1="39" y1="20" x2="39" y2="10"/>
+              <line x1="30" y1="10" x2="48" y2="10"/>
+              <line x1="60" y1="20" x2="60" y2="55"/>
+              <line x1="52" y1="28" x2="68" y2="28"/>
+              <line x1="52" y1="38" x2="68" y2="38"/>
+            </svg>
+          </div>
+          <div class="project-body">
+            <span class="ptag">Rooftop / Communications</span>
+            <h3>Wireless facility install</h3>
+            <p>Installation of a wireless services facility on the roof of an existing high-rise, built to approved plans and 2018 IBC review.</p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-figure">
+            <svg width="120" height="90" viewBox="0 0 120 90" fill="none" stroke="#F5B700" stroke-width="1.4">
+              <line x1="60" y1="15" x2="60" y2="70"/>
+              <line x1="45" y1="25" x2="75" y2="25"/>
+              <line x1="48" y1="40" x2="72" y2="40"/>
+              <line x1="51" y1="55" x2="69" y2="55"/>
+              <line x1="20" y1="75" x2="100" y2="75"/>
+            </svg>
+          </div>
+          <div class="project-body">
+            <span class="ptag">Rooftop / Infrastructure</span>
+            <h3>Cell tower replacement</h3>
+            <p>Removal of a tower lost to fire and re-installation of a replacement structure on the existing foundation.</p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-figure">
+            <svg width="120" height="90" viewBox="0 0 120 90" fill="none" stroke="#F5B700" stroke-width="1.4">
+              <rect x="25" y="25" width="70" height="45"/>
+              <line x1="25" y1="40" x2="95" y2="40"/>
+              <line x1="45" y1="40" x2="45" y2="70"/>
+              <line x1="70" y1="40" x2="70" y2="70"/>
+            </svg>
+          </div>
+          <div class="project-body">
+            <span class="ptag">Commercial / Renovation</span>
+            <h3>Office &amp; commercial buildouts</h3>
+            <p>Interior renovation and repair work for commercial and office space throughout the Philadelphia metro area.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <div class="wrap about-grid">
+      <div class="about-copy">
+        <span class="section-num mono">SEC. 05 — ABOUT</span>
+        <h2 style="margin-top:16px;">Family-run, Folsom-based</h2>
+        <p>Magness &amp; Sons General Contracting has operated out of Folsom, Pennsylvania since 1996, working commercial, office, and residential jobs across Delaware County and the wider Philadelphia metro area.</p>
+        <p>The company is led by President Thomas W. Magness, and keeps a core crew of roughly 25 tradespeople rather than scaling through subcontractors — which is part of why clients get the same point of contact from the first walkthrough to the final punch list.</p>
+        <p>If you're checking us out before hiring, verify current licensing directly with your local licensing authority — standard practice for any contractor, us included.</p>
+      </div>
+
+      <div class="signature-block">
+        <span class="mono">SPEC SHEET</span>
+        <h3>Company particulars</h3>
+        <p>The figures we'd put on a bid sheet, in the format we'd put them on a bid sheet.</p>
+        <ul>
+          <li><span>Entity</span><span>Magness &amp; Sons Gen. Contracting, Inc.</span></li>
+          <li><span>Founded</span><span>1996</span></li>
+          <li><span>Incorporated</span><span>Pennsylvania</span></li>
+          <li><span>Based</span><span>Folsom, PA 19033</span></li>
+          <li><span>Service area</span><span>Delaware Co. &amp; Philadelphia metro</span></li>
+          <li><span>President</span><span>Thomas W. Magness</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact" id="contact">
+    <div class="wrap contact-single">
+      <span class="section-num mono">SEC. 06 — CONTACT</span>
+      <h2 style="margin-top:16px;">Get a quote</h2>
+      <p class="section-desc">Call the shop directly to talk through a job and schedule a walkthrough.</p>
+
+      <div class="contact-info" style="margin-top:32px;">
+        <dl>
+          <dt>Phone</dt>
+          <dd><a href="tel:16105342400">(610) 534-2400</a></dd>
+          <dt>Address</dt>
+          <dd>105 Edgewood Ave<br>Folsom, PA 19033</dd>
+          <dt>Service area</dt>
+          <dd>Delaware County &amp; the Philadelphia metro</dd>
+        </dl>
+      </div>
+
+      <a class="btn-primary" style="margin-top:32px; display:inline-block;" href="tel:16105342400">Call (610) 534-2400</a>
+
+      <div class="license-note">
+        Licensing status varies by municipality and can change. Before signing a contract, confirm our current license and insurance directly with us and with your local licensing authority.
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span class="mono" style="display:flex; align-items:center; gap:10px;">
+      <svg width="22" height="22" viewBox="0 0 40 40" aria-hidden="true">
+        <polyline points="7,31 7,11 20,25 33,11 33,31" fill="none" stroke="#F5B700" stroke-width="3.5" stroke-linecap="square" stroke-linejoin="miter"/>
+      </svg>
+      &copy; <span id="year"></span> MAGNESS &amp; SONS GENERAL CONTRACTING, INC.
+    </span>
+    <span class="mono">105 EDGEWOOD AVE, FOLSOM, PA 19033 &middot; (610) 534-2400</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
